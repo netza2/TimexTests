@@ -1,0 +1,17 @@
+1. Base de datos es creada en un contenedor de docker con postgresql, la conexión depende de la IP asignada al contenedor, en este caso fue 172.0.0.2
+2. Desupés de crear la base de datos se llenan los campos.
+3. Consulta generada en script 2
+4. Los dos scripts se pueden ejecutar dentro de python, teniendo una base de datos Postgres con valores default. Usando docker se pueden ejecutar siguiendo los comandos en 'commands.sh'
+
+5. Realizando una función que mediante una consulta, revise si los datos a insertar se encuentran dentro de la base de datos, en este caso una consulta de la forma
+	SELECT * FROM personas WHERE nombre = $var_name and apellido = $var_apellido;
+En caso de regresar un registro, se evitaría agregar el registro a la base de datos y se enviaría un mensaje indicando que la persona ya se encuentra registrada en la base de datos con fecha: FechaRegistroEnSistema
+
+6. Una vez que se ha identificado un problema, ya sea en los casos de prueba o un bug nuevo.
+Primero intento revisar el código de inicio a fin, entendiendo el problema que se quiere resolver.
+Revisar paso a paso como van cambiando las variables de interés, y en qué linea en específico de produce el error.
+Implementar una solución que cumpla los casos de prueba, asegurando que no se produzcan nuevos errores.
+
+7. El editor de código que más utilizo actualmente es vim, debido a que la mayoría de lo que hago es a través de la consola de comandos, pero también he utilizado editores en ambientes de desarrollo como Visual Studio, Rstudio, PyCharm, Emacs, los cuales ofrecen ventajas y comodidades a la hora de desarrollar.
+La principal razón para utilizar vim en lugar de un IDE más complejo es por su ligereza, ya que al correr programas en la consola de comandos y a través de docker no tengo que preocuparme por estar corriendo varias cosas al mismo tiempo. Además de que últimamente la mayoría de mi trabajo ha sido analisis de datos, por lo que no he necesitado tanto un IDE, además de Rstudio.
+
